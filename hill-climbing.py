@@ -41,17 +41,17 @@ def hill_climbing(l, max_threshold, k):
 		return
 
 	count = 0 
-	s = random.sample(l, random.randrange(1, len(l)) )
+	current = random.sample(l, random.randrange(1, len(l)) )
 	
 	while count < max_threshold: 
 
-		new_neighbor = find_neighbor(l, s)
+		new_neighbor = find_neighbor(l, current)
 
-		if (residue(new_neighbor, k) < residue(s, k)):
-			s = new_neighbor
+		if (residue(new_neighbor, k) < residue(current, k)):
+			current = new_neighbor
 
 		count += 1
 
-	return (residue(s, k), s)
+	return (residue(current, k), current)
 
 print(hill_climbing([1,2,3,4], 100, 7))
