@@ -4,7 +4,7 @@ These sums can then be checked against the sum inputed in the problem and return
 
 
 '''
-output=[]
+
 
 def Subset(array,start,end,sum,output):
 	#The start index and the end index tell the recursive calls where to start and end on the
@@ -16,14 +16,13 @@ def Subset(array,start,end,sum,output):
 			#We have iterated through all permutations in this recursive call
 			#add it to the output list
 			output.append(sum)
-			return;
+			return
 		
 		
 		#Call this method recursively including the starting element
-		Subset(array,start+1,end,sum+=array[start])
-		
+		Subset(array,start+1,end,sum+array[start],output)
 		#Call this method not including the starting element in the sum
-		Subset(array,start+1,end,sum)
+		Subset(array,start+1,end,sum,output)
 
 
 def checkOutput(output,value):
@@ -31,4 +30,16 @@ def checkOutput(output,value):
 		if sum==value:
 			return true
 	return false
+
+
+#this method will actually test the exhaustive search and combine the two methods above
+array=[]
+def subsetSum(array,k):
+    output=[]
+    Subset(array,0,len(array),k,output)
+    return checkOutput(output,k)
+
+
+
+
 	
