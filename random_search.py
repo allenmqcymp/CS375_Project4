@@ -10,7 +10,6 @@ def random_search(l, max_threshold, k):
     count = 0
     while count < max_threshold:
         sample = random.sample(l, random.randrange(1, len(l)) )
-        print(sample)
         try_sum = sum(sample)
         if try_sum == k:
             return True
