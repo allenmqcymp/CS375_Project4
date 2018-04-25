@@ -63,4 +63,9 @@ def simulated_annealing(l, max_threshold, k):
 
 	return (smallest_residue, current)
 
-print(simulated_annealing([1,2,3,4], 100, 7))
+
+def main():
+	print(simulated_annealing([1,2,3,4], 100, 7))
+
+if __name__ == "__main__":
+	main()
