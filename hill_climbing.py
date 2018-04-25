@@ -54,4 +54,9 @@ def hill_climbing(l, max_threshold, k):
 
 	return (residue(current, k), current)
 
-print(hill_climbing([1,2,3,4], 100, 7))
+
+def main(): 
+	print(hill_climbing([1,2,3,4], 100, 7))	
+
+if __name__ == "__main__":
+	main()
