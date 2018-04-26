@@ -16,7 +16,6 @@ def random_search(l, max_threshold, k):
         elif abs(try_sum - k) < abs(residue):
             residue = abs(try_sum - k)
         count += 1
-    print("failed to find solution")
     return residue
 
 def main():

@@ -1,7 +1,7 @@
 # random search algo for the subset sum problem
 # CS 375 Project 4
 
-def greedy_search(l, k):
+def greedy_search(l, max_threshold, k):
     if k == 0:
         return True
 
