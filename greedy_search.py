@@ -12,7 +12,7 @@ def greedy_search(l, max_threshold, k):
     while len(l) > 0:
         try_val = l.pop(0)
         if sum(subset) + try_val == k:
-            return True
+            return 0
         elif sum(subset) + try_val < k:
             subset.append(try_val)
     return abs(k - sum(subset))
@@ -22,6 +22,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-        
-        
-

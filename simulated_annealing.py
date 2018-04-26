@@ -13,6 +13,9 @@ def find_neighbor(l, s):
 
 	i, j = random.sample(range(0, len(l)), 2)
 
+	while (i == j or l[i] == l[j]): 
+		i, j = random.sample(range(0, len(l)), 2)
+
 	if (l[i] in s):
 		t.remove(l[i])
 
