@@ -24,7 +24,7 @@ def allSubset(numbers, size):
                 yield [number]+combination
 
 def main():
-    a=[1, 4, 9, 8, 5, 9, 10, 8, 9, 1]
+    a=[1,2,3,4,5,6,7,8,9,10]
     l = subsetsum(a,6)
     print(len(l))
 
