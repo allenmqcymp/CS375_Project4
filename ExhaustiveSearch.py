@@ -28,8 +28,8 @@ def Subset(array,start,end,sum,output):
 def checkOutput(output,value):
 	for sum in output:
 		if sum==value:
-			return true
-	return false
+			return True
+	return False
 
 
 #this method will actually test the exhaustive search and combine the two methods above
@@ -38,6 +38,15 @@ def subsetSum(array,k):
     output=[]
     Subset(array,0,len(array),k,output)
     return checkOutput(output,k)
+
+def main():
+	print(subsetSum([1,4,7,8,9,10], 19) )
+
+
+if __name__ == "__main__":
+	main()
+
+
 
 
 
