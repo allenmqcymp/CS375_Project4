@@ -21,7 +21,7 @@ K = 25*RANGE_MAX
 TOTAL_SIZE = 100
 TOTAL = 50
 METHODS_NUM = 4
-MAX_THRESHOLD = 1000000
+MAX_THRESHOLD = 1000
 
 core = {"random": [random_search, 0], "greedy": [greedy_search, 1], "hill_climbing": [hill_climbing, 2]
 			, "simulated_annealing" : [simulated_annealing, 3]}
@@ -46,7 +46,8 @@ def main():
 	print("-------- Done with hill_climbing ----------")
 	fill_in_reisude("simulated_annealing")
 	print("-------- Done with simulated_annealing ----------")
-	print(reisudes[:5])
+	np.savetxt("./reisudes_data.csv", samples, delimiter=',', comments="")
+
 
 
 if __name__ == "__main__":
