@@ -46,7 +46,11 @@ def main():
 	print("-------- Done with hill_climbing ----------")
 	fill_in_reisude("simulated_annealing")
 	print("-------- Done with simulated_annealing ----------")
-	np.savetxt("./reisudes_data.csv", samples, delimiter=',', comments="")
+
+
+	with open("./data/reisudes_raw_data.csv", 'wb') as f:
+		f.write(b'Random,Greedy,hill_climbing,simulated_annealing\n')
+		np.savetxt(f, reisudes, delimiter=',', comments="")
 
 
 
