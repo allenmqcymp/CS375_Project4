@@ -31,7 +31,7 @@ def generate_sample(length):
 	
 def generate_data():
     # generate according to sizes
-    sizes = [10**1, 5 * 10, 10**2, 10**3, 10**4, 10**5, 10**6, 10**7]
+    sizes = [10, 15, 20, 22, 25, 28, 50, 100, 500, 1000, 1500]
     for sz in sizes:
         path = os.path.join(DEST, "{}.txt".format(sz) )
         with open(path, 'w') as f:
@@ -39,6 +39,5 @@ def generate_data():
                 f.write("%s\n" % item)
 
 
-generate_data()
 
 
