@@ -52,7 +52,7 @@ def hill_climbing(l, max_threshold, k):
 
 		count += 1
 
-	return (residue(current, k), current)
+	return residue(current, k)
 
 
 def main(): 

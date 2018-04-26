@@ -61,7 +61,7 @@ def simulated_annealing(l, max_threshold, k):
 
 		count += 1
 
-	return (smallest_residue, current)
+	return smallest_residue
 
 
 def main():
