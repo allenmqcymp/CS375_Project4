@@ -25,7 +25,8 @@ def setup_test_data():
         ct = os.path.splitext(p)[0]
         list_dict[ct] = construct_list(os.path.join(PATH, p))
         count = int(ct)
-        K_dict[ct] = count * MAX_VAL + 1
+        K_dict[ct] = sum(random.sample(list_dict[ct], random.randrange(1, len(list_dict[ct])))) + \
+                                    random.randint(min(list_dict[ct]), max(list_dict[ct]))
     return list_dict, K_dict
 
 
@@ -60,23 +61,23 @@ def main():
     dp_sizes = [10, 50, 100, 500, 1000, 1500]
     exhaus_sizes = [10, 15, 20, 22, 25, 28]
 
-    # # test dp first
-    # print("Size, Algo, Time")
-    # for size in dp_sizes:
-    #     for _ in range(5):
-    #         gen.generate_data()
-    #         list_dict, k_dict = setup_test_data()
-    #         time = test(size, dp.dp_search, k_dict, list_dict)
-    #         print("{}, DP, {}".format(size, time))
-    #
-    # print()
-    # print("Size, Algo, Time")
-    # for size in exhaus_sizes:
-    #     for _ in range(5):
-    #         gen.generate_data()
-    #         list_dict, k_dict = setup_test_data()
-    #         time = test(size, exhaus.exhaustive_search, k_dict, list_dict)
-    #         print("{}, BF, {}".format(size, time))
+    # test dp first
+    print("Size, Algo, Time")
+    for size in dp_sizes:
+        for _ in range(5):
+            gen.generate_data()
+            list_dict, k_dict = setup_test_data()
+            time = test(size, dp.dp_search, k_dict, list_dict)
+            print("{}, DP, {}".format(size, time))
+
+    print()
+    print("Size, Algo, Time")
+    for size in exhaus_sizes:
+        for _ in range(5):
+            gen.generate_data()
+            list_dict, k_dict = setup_test_data()
+            time = test(size, exhaus.exhaustive_search, k_dict, list_dict)
+            print("{}, BF, {}".format(size, time))
 
 
     print()
